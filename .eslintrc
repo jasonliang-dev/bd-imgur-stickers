@@ -1,0 +1,10 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "rules": {
+    "no-param-reassign": 0,
+    "no-console": 0
+  }
+}
