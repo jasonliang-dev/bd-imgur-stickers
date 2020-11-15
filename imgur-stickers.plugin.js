@@ -13,11 +13,13 @@ class BDImgurStickers {
     const IMGUR_CLIENT_ID = "2be59afdb459916";
     const STORAGE_ALBUM_ID = "liang-imgur-stickers-album-id";
 
-    const store = document.head.appendChild(document.createElement("iframe"))
-      .contentWindow.frames.localStorage;
+    const iframe = document.createElement("iframe");
+    iframe.id = BDImgurStickers.storeId;
+    const store = document.head.appendChild(iframe).contentWindow.frames
+      .localStorage;
 
     BdApi.injectCSS(
-      "liang-imgur-stickers-css",
+      BDImgurStickers.cssId,
       `
       .l-opacity-75 {
         opacity: 0.75;
@@ -380,15 +382,24 @@ class BDImgurStickers {
   }
 
   stop() {
+    BdApi.clearCSS(BDImgurStickers.cssId);
+
+    document.head.removeChild(
+      document.querySelector(`#${BDImgurStickers.storeId}`)
+    );
+
     BdApi.ReactDOM.unmountComponentAtNode(
-      document.querySelector(`BDImgurStickers.mountTarget`)
+      document.querySelector(
+        `#${BDImgurStickers.mountTarget} ${BDImgurStickers.domId}`
+      )
     );
   }
 }
 
 BDImgurStickers.mountTarget =
   "[class*=baseLayer] > [class*=container] > [class*=base]";
-
 BDImgurStickers.domId = "liang-imgur-stickers-app";
+BDImgurStickers.cssId = "liang-imgur-stickers-css";
+BDImgurStickers.storeId = "liang-imgur-stickers-iframe";
 
 module.exports = BDImgurStickers;
