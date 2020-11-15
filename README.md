@@ -15,7 +15,7 @@ Quicky send images from an Imgur album by selecting them from a menu.
 
 Find or create an Imgur album. You'll need the album ID from it. You
 can get the album ID by copying the end of an Imgur album link:
-https://imgur.com/a/<album ID here>.
+`https://imgur.com/a/<album ID here>`.
 
 Near the right of the message box, click on the leftmost button in the
 button group (the one that looks like a tag). This opens the sticker
