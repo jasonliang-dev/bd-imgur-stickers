@@ -86,6 +86,7 @@ class BDImgurStickers {
 
       React.useEffect(() => {
         const topbar = document.querySelector("html.platform-win");
+        const windowsYOffset = topbar ? -21 : 0;
 
         let request;
 
@@ -94,7 +95,10 @@ class BDImgurStickers {
 
           if (textarea) {
             const menuRect = textarea.getBoundingClientRect();
-            setMenuPlacement({ x: menuRect.right, y: menuRect.top });
+            setMenuPlacement({
+              x: menuRect.right,
+              y: menuRect.top + windowsYOffset,
+            });
           }
 
           const textareaButtons = document.querySelector(
@@ -105,7 +109,7 @@ class BDImgurStickers {
             const buttonRect = textareaButtons.getBoundingClientRect();
             setButtonPlacement({
               x: buttonRect.left,
-              y: buttonRect.top - (topbar ? 21 : 0),
+              y: buttonRect.top + windowsYOffset,
             });
           }
 
