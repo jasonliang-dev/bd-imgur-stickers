@@ -1,7 +1,7 @@
 /**
  * @name BDImgurStickers
  * @author Jason Liang
- * @description SSend an image from an imgur album
+ * @description Send an image from an imgur album
  * @version 0.0.1
  * @source https://github.com/jasonliang-dev/bd-imgur-stickers
  */
