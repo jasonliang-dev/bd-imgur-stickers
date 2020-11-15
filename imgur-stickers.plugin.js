@@ -105,7 +105,7 @@ class BDImgurStickers {
             const buttonRect = textareaButtons.getBoundingClientRect();
             setButtonPlacement({
               x: buttonRect.left,
-              y: buttonRect.top - (topbar ? -21 : 0),
+              y: buttonRect.top - (topbar ? 21 : 0),
             });
           }
 
