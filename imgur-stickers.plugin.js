@@ -85,35 +85,37 @@ class BDImgurStickers {
       }, [albumIDDebounced]);
 
       React.useEffect(() => {
+        const topbar = document.querySelector("html.platform-win");
+
+        let request;
+
         function stayInPlace() {
-          // ensure that textarea dimensions have already changed before querying
-          // by waiting a 60th of a second (17ms)
-          window.setInterval(() => {
-            const textarea = document.querySelector("[class^=channelTextArea]");
+          const textarea = document.querySelector("[class^=channelTextArea]");
 
-            if (textarea) {
-              const menuRect = textarea.getBoundingClientRect();
-              setMenuPlacement({ x: menuRect.right, y: menuRect.top });
-            }
+          if (textarea) {
+            const menuRect = textarea.getBoundingClientRect();
+            setMenuPlacement({ x: menuRect.right, y: menuRect.top });
+          }
 
-            const textareaButtons = document.querySelector(
-              "[class^=channelTextArea] [class^=buttons]"
-            );
+          const textareaButtons = document.querySelector(
+            "[class^=channelTextArea] [class^=buttons]"
+          );
 
-            if (textareaButtons) {
-              const buttonRect = textareaButtons.getBoundingClientRect();
-              setButtonPlacement({ x: buttonRect.left, y: buttonRect.top });
-            }
-          }, 17);
+          if (textareaButtons) {
+            const buttonRect = textareaButtons.getBoundingClientRect();
+            setButtonPlacement({
+              x: buttonRect.left,
+              y: buttonRect.top - (topbar ? -21 : 0),
+            });
+          }
+
+          request = window.requestAnimationFrame(stayInPlace);
         }
 
-        window.addEventListener("resize", stayInPlace);
-        document.addEventListener("keydown", stayInPlace);
-        stayInPlace();
+        request = window.requestAnimationFrame(stayInPlace);
 
         return () => {
-          window.removeEventListener("resize", stayInPlace);
-          document.removeEventListener("keydown", stayInPlace);
+          window.cancelAnimationFrame(request);
         };
       }, []);
 
