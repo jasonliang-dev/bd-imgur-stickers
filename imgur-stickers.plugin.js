@@ -1,7 +1,7 @@
 /**
  * @name BDImgurStickers
  * @author Jason Liang
- * @description Send an image from an imgur album
+ * @description Send images from an imgur album
  * @version 0.0.2
  * @source https://github.com/jasonliang-dev/bd-imgur-stickers
  */
@@ -390,7 +390,7 @@ class BDImgurStickers {
 
     BdApi.ReactDOM.unmountComponentAtNode(
       document.querySelector(
-        `#${BDImgurStickers.mountTarget} ${BDImgurStickers.domId}`
+        `${BDImgurStickers.mountTarget} #${BDImgurStickers.domId}`
       )
     );
   }
