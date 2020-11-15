@@ -7,7 +7,7 @@ Quicky send images from an Imgur album by selecting them from a menu.
 ## Install
 
 1. Install [BetterDiscord](https://rauenzi.github.io/BetterDiscordApp/)
-2. Download the [latest release](https://github.com/jasonliang-dev/bd-imgur-stickers/releases/download/v0.0.6/imgur-stickers.plugin.js)
+2. Download the [latest release](https://github.com/jasonliang-dev/bd-imgur-stickers/releases/download/v0.0.7/imgur-stickers.plugin.js)
 3. Move the downloaded file into the plugins folder. On Windows, the plugins folder should be located at `%appdata%\BetterDiscord\plugins`
 4. In Discord > User Settings > Plugins, Enable BDImgurStickers.
 
