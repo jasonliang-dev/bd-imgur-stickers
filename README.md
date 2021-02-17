@@ -1,6 +1,10 @@
 # BDImgurStickers
 
-Quicky send images from an Imgur album by selecting them from a menu.
+Send images from an Imgur album by selecting them from a menu.
+
+**WARNING**: By using this plugin, you are modifying the Discord client, and in turn, you are violating Discord's ToS.
+
+⚠️ **USE AT YOUR OWN RISK!** ⚠️
 
 ![BGImgurStickers Demo](./demo.gif)
 
